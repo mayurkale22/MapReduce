@@ -1,0 +1,73 @@
+[cloudera@quickstart ~]$ hadoop fs -mkdir /user/cloudera/pagerank/
+[cloudera@quickstart ~]$ hadoop fs -put PagerRank_Input.txt /user/cloudera/pagerank/
+[cloudera@quickstart ~]$ export HADOOP_CLASSPATH=pagerank.jar 
+[cloudera@quickstart ~]$ hadoop jar pagerank.jar PageRankDriver /user/cloudera/pagerank/PagerRank_Input.txt /user/cloudera/pagerank/output/
+14/09/24 08:14:42 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+14/09/24 08:14:43 WARN mapreduce.JobSubmitter: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+14/09/24 08:14:43 INFO input.FileInputFormat: Total input paths to process : 1
+14/09/24 08:14:43 INFO mapreduce.JobSubmitter: number of splits:1
+14/09/24 08:14:43 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1410789146622_0027
+14/09/24 08:14:44 INFO impl.YarnClientImpl: Submitted application application_1410789146622_0027
+14/09/24 08:14:44 INFO mapreduce.Job: The url to track the job: http://quickstart.cloudera:8088/proxy/application_1410789146622_0027/
+14/09/24 08:14:44 INFO mapreduce.Job: Running job: job_1410789146622_0027
+14/09/24 08:14:53 INFO mapreduce.Job: Job job_1410789146622_0027 running in uber mode : false
+14/09/24 08:14:53 INFO mapreduce.Job:  map 0% reduce 0%
+14/09/24 08:15:00 INFO mapreduce.Job:  map 100% reduce 0%
+14/09/24 08:15:08 INFO mapreduce.Job:  map 100% reduce 100%
+14/09/24 08:15:08 INFO mapreduce.Job: Job job_1410789146622_0027 completed successfully
+14/09/24 08:15:09 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=311
+		FILE: Number of bytes written=183881
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=235
+		HDFS: Number of bytes written=106
+		HDFS: Number of read operations=6
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Data-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=5269
+		Total time spent by all reduces in occupied slots (ms)=5420
+		Total time spent by all map tasks (ms)=5269
+		Total time spent by all reduce tasks (ms)=5420
+		Total vcore-seconds taken by all map tasks=5269
+		Total vcore-seconds taken by all reduce tasks=5420
+		Total megabyte-seconds taken by all map tasks=5395456
+		Total megabyte-seconds taken by all reduce tasks=5550080
+	Map-Reduce Framework
+		Map input records=6
+		Map output records=21
+		Map output bytes=263
+		Map output materialized bytes=311
+		Input split bytes=139
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=6
+		Reduce shuffle bytes=311
+		Reduce input records=21
+		Reduce output records=6
+		Spilled Records=42
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=133
+		CPU time spent (ms)=1140
+		Physical memory (bytes) snapshot=340545536
+		Virtual memory (bytes) snapshot=1695809536
+		Total committed heap usage (bytes)=219480064
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=96
+	File Output Format Counters 
+		Bytes Written=106
