@@ -2,6 +2,15 @@
 
 Just playing with mapReduce
 
+MapReduce is a programming model for data processing. Most important, MapReduce programs are inherently parallel, thus putting very large-scale data analysis into the hands of anyone with enough machines at their disposal.
+
+<h4>Map and Reduce</h4>
+MapReduce works by breaking the processing into two phases: the map phase and the reduce phase. Each phase has key-value pairs as input and output, the types of which may be chosen by the programmer. The programmer also specifies two functions: the map function and the reduce function.
+
+<h4>A test run</h4>
+<i>% export HADOOP_CLASSPATH=hadoop-examples.jar<br/>
+% hadoop MaxTemperature input/ncdc/sample.txt output<br/></i>
+
 
 <h2>1) PageRank Problem</h2>
 
@@ -16,17 +25,12 @@ Your task is to implement a simplified PageRank with MapReduce.
 
 To simplify your work, you can assume that we have the following input file:
 
-  A C F 0.166667
-
-  B D E F 0.166667
-
-  C A B 0.166667
-
-  D A B C E F 0.166667
-
-  E F 0.166667
-
-  F B C 0.166667
+  A C F 0.166667<br/>
+  B D E F 0.166667<br/>
+  C A B 0.166667<br/>
+  D A B C E F 0.166667<br/>
+  E F 0.166667<br/>
+  F B C 0.166667<br/>
 
   The first line, for example, is interpreted as follows:
   “A” means "Page A“.
@@ -39,14 +43,9 @@ After you read in this input, your MR jobs should parse and process the data, an
 
 Your output file should look like this, where PR is the pagerank value computed by your program:
 
-A C F PR
-
-B D E F PR 
-
-C A B PR 
-
-D A B C E F PR 
-
-E F PR 
-
-F B C PR 
+A C F PR<br/>
+B D E F PR <br/>
+C A B PR <br/>
+D A B C E F PR <br/>
+E F PR <br/>
+F B C PR <br/>
